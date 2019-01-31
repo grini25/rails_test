@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
 
+gem 'acts-as-taggable-on'
+gem 'bootstrap_flash_messages', '~> 1.0.1'
+gem "font-awesome-rails"
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'simple_enum', '~> 2.3.0' , require: 'simple_enum/mongoid'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,0 +1,31 @@
+<h2><%= bulletin_name params[:bulletin_id] %></h2>
+
+<table class='table'>
+<tr>
+  <th>Title</th>
+  <td><%= @post.title %></td>
+</tr>
+<tr>
+  <th>Content</th>
+  <td><%= @post.content %></td>
+</tr>
+<tr>
+  <th>Tag list</th>
+  <td><%= tag_icons @post.tag_list %></td>
+</tr>
+<tr>
+  <th>Created at</th>
+  <td><%= @post.created_at %></td>
+</tr>
+</table>
+
+<% if @post.bulletin.post_type == :gallery %>
+  <tr>
+    <th>Picture</th>
+    <td><%= image_tag @post.picture_url %></td>
+  </tr>
+<% end %>
+
+<%= link_to 'Edit', (@bulletin.present? ? edit_bulletin_post_path(@bulletin)  : edit_post_path(@post)), class: 'btn btn-default' %>
+<%= link_to 'List', (@bulletin.present? ? bulletin_posts_path(@bulletin) : posts_path), class: 'btn btn-default' %>
+<%= render "comments/comments" %>
